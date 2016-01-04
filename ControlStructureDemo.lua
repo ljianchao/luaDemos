@@ -1,3 +1,7 @@
+--[[
+    测试控制结构
+]]
+
 -- 测试if
 function testIf()
 	score = 90
