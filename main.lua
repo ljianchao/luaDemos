@@ -1,4 +1,4 @@
--- 引用模块
+-- 寮曠敤妯″潡
 -- local complex = require "complex"
 -- 
 -- local com1 = complex.new(0,1)
@@ -16,5 +16,22 @@
 -- 
 -- print(type(a))
 
-local a = 2
-print(string.len(a))
+local aes = require("resty.aes")
+local zlib = require("resty.compress")
+
+local secretkey = "hmcm2015_waf_protect"
+local aes_128_cbc = aes:new(secretkey)
+
+
+
+local str = "{\"agent\":\"Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0\",\"ip\":\"127.0.0.1\",\"flag\":180}"
+
+local asestr = aes_128_cbc:encrypt(str)	
+print("asestr=" .. asestr)
+
+local zipasestr = zlib.compress(asestr)
+print("zipasestr=" .. zipasestr)
+
+local unzipasestr = zlib.uncompress(zipasestr)
+print("unzipasestr=" .. unzipasestr)
+

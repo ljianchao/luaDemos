@@ -2,7 +2,9 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch Extension",
+            // Name of configuration; appears in the lauch configuartion drop down menu.
+			"name": "Launch Lua",
+            // Type of configuration.Posssible values: "node", "mono"
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
