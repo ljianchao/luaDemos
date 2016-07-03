@@ -117,4 +117,8 @@ th[1000] = 1
 print(th[#th])
 print(table.maxn(th))
 
+tha = {"1000"}
+print(tha[#tha])
+print(table.maxn(tha))
+
 print("------------------------------------------------")
